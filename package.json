@@ -5,7 +5,7 @@
     "scripts": {
     "start": "ts-node be-src/index.ts",
     "dev": "nodemon be-src/index.ts",
-    "build:fe": "parcel build fe-src/index.html --dist-dir public",
+    "build:fe": "parcel build fe-src/index.html --dist-dir public && node scripts/copy-images.js",
     "dev:fe": "parcel fe-src/index.html --dist-dir public",
     "seed": "ts-node be-src/seed.ts"
   },

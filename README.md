@@ -28,10 +28,12 @@ Pet Finder permite a los usuarios:
 - **Resend** para envío de emails
 
 ### Frontend
-- **TypeScript**
+- **React 18** con **TypeScript**
+- **React Router DOM v6** (SPA routing con auth guards)
+- **Recoil** (estado global)
 - **Parcel** (bundler)
 - **SCSS** para estilos
-- **Mapbox GL JS** para mapas
+- **Mapbox GL JS** para mapas interactivos
 
 ## 📁 Estructura del Proyecto
 
@@ -55,13 +57,15 @@ pet-finder/
 │   │   ├── cloudinary.ts
 │   │   └── resend.ts
 │   └── index.ts            # Entry point
-├── fe-src/                 # Frontend
-│   ├── components/         # Componentes reutilizables
-│   ├── pages/              # Páginas de la app
+├── fe-src/                 # Frontend (React)
+│   ├── ui/                 # Componentes base (Button, TextField, Texts, Map)
+│   ├── components/         # Componentes funcionales (Header, Layout, PetCard, Toast...)
+│   ├── pages/              # Páginas de la app (Home, Login, PetsList, Profile...)
+│   ├── hooks/              # Custom hooks con Recoil (useAuth, usePets, useToast, useLocation)
+│   ├── lib/                # Capa de API (api.ts)
+│   ├── router/             # React Router con auth guards
 │   ├── styles/             # Estilos SCSS
-│   ├── router.ts           # Router SPA
-│   ├── state.ts            # Estado global
-│   └── index.ts            # Entry point
+│   └── index.tsx           # Entry point (React)
 ├── public/                 # Archivos estáticos (generado)
 ├── .env.template           # Template de variables de entorno
 ├── package.json
